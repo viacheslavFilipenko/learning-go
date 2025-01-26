@@ -8,13 +8,22 @@ import (
 func main() {
 	const inflationRate float64 = 3.5
 
-	investmentAmount := 1000.0
-	years := 5.0
-	annualInterestRate := 4.25
+	var investmentAmount float64
+	var years float64
+	var annualInterestRate float64
+
+	fmt.Print("Enter investment amount: ")
+	fmt.Scanf("%f", &investmentAmount)
+
+	fmt.Print("Enter annual interest rate in percentage: ")
+	fmt.Scanf("%f", &annualInterestRate)
+
+	fmt.Print("Enter number of years: ")
+	fmt.Scanf("%f", &years)
 
 	var futureInvestmentValue float64 = investmentAmount * math.Pow(1+annualInterestRate/100, years)
 	var realFutureInvestmentValue float64 = futureInvestmentValue / math.Pow(1+inflationRate/100, years)
 
-	fmt.Println("Accumulated value is", futureInvestmentValue)
-	fmt.Println("Real accumulated value is", realFutureInvestmentValue)
+	fmt.Printf("Accumulated value is %.2f\n", futureInvestmentValue)
+	fmt.Printf("Real accumulated value is %.2f\n", realFutureInvestmentValue)
 }
