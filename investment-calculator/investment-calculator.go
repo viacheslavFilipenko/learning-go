@@ -8,13 +8,9 @@ import (
 const inflationRate float64 = 3.5
 
 func main() {
-	var investmentAmount float64
-	var years float64
-	var annualInterestRate float64
-
-	investmentAmount = getUserInput("Enter investment amount: ")
-	annualInterestRate = getUserInput("Enter annual interest rate in percentage: ")
-	years = getUserInput("Enter number of years: ")
+	investmentAmount := getUserInput("Enter investment amount: ")
+	annualInterestRate := getUserInput("Enter annual interest rate in percentage: ")
+	years := getUserInput("Enter number of years: ")
 
 	var futureInvestmentValue float64 = calculateInvestment(investmentAmount, annualInterestRate, years)
 	var realFutureInvestmentValue float64 = calculateInvestment(futureInvestmentValue, inflationRate, years)
